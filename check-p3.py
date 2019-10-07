@@ -38,7 +38,6 @@ files = ['README.md',
 aleatorio = str(int(random.random() * 1000000))
 
 error = 0
-
 print()
 print("Clonando el repositorio " + repo_git + "\n")
 os.system('git clone ' + repo_git + ' /tmp/' + aleatorio + ' > /dev/null 2>&1')
