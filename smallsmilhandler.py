@@ -11,7 +11,7 @@ class SmallSmilHandler(ContentHandler):
 
     def __init__(self):
         self.lista = []
-        self.dicc_ka = {'root-layout': ['width', 'height', 'background-color'],
+        self.dicc = {'root-layout': ['width', 'height', 'background-color'],
                         'region': ['id', 'top', 'bottom', 'left', 'right'],
                         'img': ['src', 'region', 'begin', 'dur'],
                         'audio': ['src', 'begin', 'dur'],
@@ -19,10 +19,20 @@ class SmallSmilHandler(ContentHandler):
 
 
     def startElement(self, name, attrs):
+        diccaux = {}
+        if name in self.dicc:
+            diccaux['etiqueta '] = name
+            for atributo in self.dicc[name]:
+                diccaux[atributo] = attrs.get(atributo, '')
+                """
+                escribe el diccionario en una lista, cada elemento
+                es la etiqueta con los atributos que tiene y su contenido
+                """
+            self.lista.append(diccaux)
 
-        dfhg
 
     def get_tags(self):
+        print(self.lista)
 
 
 if __name__ == "__main__":
