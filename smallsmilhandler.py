@@ -32,7 +32,7 @@ class SmallSmilHandler(ContentHandler):
 
 
     def get_tags(self):
-        print(self.lista)
+        return self.lista
 
 
 if __name__ == "__main__":
