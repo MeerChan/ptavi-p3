@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 
+import json
 import sys
 import smallsmilhandler
 from xml.sax import make_parser
@@ -41,6 +42,9 @@ class KaraokeLocal:
         if file_json == '':
             file_json = file.replace('.smil', '.json')
         with open(file_json, 'w') as f:
+            """
+            Indent es el numero de espacios que crea el json
+            """
             json.dump(self.lista, f, indent=4)
 
 
@@ -56,4 +60,5 @@ if __name__ == "__main__":
         sys.exit("Usage:python3 karaoke.py file.smil.")
 
     karaoke = KaraokeLocal(file)
+    karaoke.to_json(file)
     print(karaoke)
