@@ -40,6 +40,8 @@ if __name__ == "__main__":
     Programa principal
     """
     parser = make_parser()
-    cHandler = ChistesHandler()
+    cHandler = SmallSmilHandler()
     parser.setContentHandler(cHandler)
-    parser.parse(open('chistes2.xml'))
+    parser.parse(open(sys.argv[1]))
+    lista = cHandler.get_tags()
+    print(lista)
