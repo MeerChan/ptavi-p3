@@ -36,10 +36,20 @@ class KaraokeLocal:
         return todo_unido
 
 
+    def to_json(self, file):
+        file_json = ''
+        if file_json == '':
+            file_json = file.replace('.smil', '.json')
+        with open(file_json, 'w') as f:
+            json.dump(self.lista, f, indent=4)
+
+
 if __name__ == "__main__":
     """
     Programa principal
     """
+    if len(sys.argv) != 2:
+        sys.exit("Usage:python3 karaoke.py file.smil.")
     try:
         file = sys.argv[1]
     except IndexError:
