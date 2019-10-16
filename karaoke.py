@@ -64,7 +64,7 @@ class KaraokeLocal:
                         """
                         urllib.request.urlretrieve(valor, file_local[1:])
                         """
-                        Ahora en src sustituimos la URL por el archivo local,
+                        Ahora en src sustituimos la URL por el archivo local, 
                         para que "mire" el archivo descargado en lugar de usar
                         internet
                         """
